@@ -1,0 +1,63 @@
+{
+  "name": "fenextjs-export",
+  "version": "2.0.0",
+  "description": "",
+  "main": "./cjs/index.js",
+  "module": "./cjs/index.js",
+  "types": "./cjs/index.d.ts",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "echo 'esm'",
+    "build:cjs": "tsc --module commonjs --outDir cjs",
+    "lint": "npx eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "flb": "npm run format && npm run lint && npm run build ",
+    "bun-i": "bun i",
+    "remove-bun-lockb": "rm -r bun.lockb",
+    "remove-node-module": "rm -r node_modules",
+    "remove": "npm run remove-node-module && npm run remove-bun-lockb",
+    "update-package": "ncu -u !next",
+    "update": "npm run update-package && npm run remove && npm run bun-i && npm run flb",
+    "u": "npm run update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscoblancojn/fenextjs-functions.git"
+  },
+  "keywords": [
+    "fenextjs",
+    "nextjs",
+    "ts"
+  ],
+  "author": "franciscoblancojn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciscoblancojn/fenextjs-functions/issues"
+  },
+  "homepage": "https://github.com/franciscoblancojn/fenextjs-functions#readme",
+  "dependencies": {
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "xlsx": "^0.18.5"
+  },
+  "files": [
+    "cjs",
+    "esm"
+  ],
+  "devDependencies": {
+    "@types/node": "20.11.16",
+    "@types/react": "18.2.55",
+    "@types/react-dom": "18.2.19",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "8.56.0",
+    "npm-check-updates": "^16.14.14",
+    "prettier": "^3.2.5",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FenextExportJsonFile = void 0;
+function FenextExportJsonFile(jsonData, fileName) {
+    const jsonString = JSON.stringify(jsonData, null, 2);
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = fileName + ".json";
+    link.click();
+    URL.revokeObjectURL(url);
+    document.body.removeChild(link);
+}
+exports.FenextExportJsonFile = FenextExportJsonFile;
+//# sourceMappingURL=index.js.map
