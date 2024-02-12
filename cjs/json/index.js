@@ -10,7 +10,6 @@ function FenextExportJsonFile(jsonData, fileName) {
     link.download = fileName + ".json";
     link.click();
     URL.revokeObjectURL(url);
-    document.body.removeChild(link);
 }
 exports.FenextExportJsonFile = FenextExportJsonFile;
 //# sourceMappingURL=index.js.map

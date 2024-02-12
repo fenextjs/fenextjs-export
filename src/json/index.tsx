@@ -9,5 +9,4 @@ export function FenextExportJsonFile(jsonData: object[], fileName: string) {
     link.click();
 
     URL.revokeObjectURL(url);
-    document.body.removeChild(link);
 }
