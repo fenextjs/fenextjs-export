@@ -39,9 +39,6 @@
   },
   "homepage": "https://github.com/franciscoblancojn/fenextjs-functions#readme",
   "dependencies": {
-    "next": "13.4.12",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
     "xlsx": "^0.18.5"
   },
   "files": [
@@ -58,6 +55,7 @@
     "npm-check-updates": "^16.14.14",
     "prettier": "^3.2.5",
     "ts-loader": "^9.5.1",
+    "tslib": "^2.6.2",
     "typescript": "^5.3.3"
   }
 }
