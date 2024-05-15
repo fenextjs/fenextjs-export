@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-export",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/franciscoblancojn/fenextjs-functions#readme",
   "dependencies": {
-    "xlsx": "^0.18.5"
+    "xlsx": "0.18.5"
   },
   "files": [
     "cjs",
@@ -49,13 +49,13 @@
     "@types/node": "20.11.16",
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
     "eslint": "8.56.0",
-    "npm-check-updates": "^16.14.14",
-    "prettier": "^3.2.5",
-    "ts-loader": "^9.5.1",
-    "tslib": "^2.6.2",
-    "typescript": "^5.3.3"
+    "npm-check-updates": "16.14.14",
+    "prettier": "3.2.5",
+    "ts-loader": "9.5.1",
+    "tslib": "2.6.2",
+    "typescript": "5.3.3"
   }
 }
