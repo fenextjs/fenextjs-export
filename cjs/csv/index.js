@@ -1,46 +1,34 @@
-export interface FenextExportCsvFileProps {
-    items: object[];
-    fileName: string;
-}
-
-export const FenextExportCsvFile = ({
-    fileName,
-    items,
-}: FenextExportCsvFileProps) => {
-    function converterLine(obj: object) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FenextExportCsvFile = void 0;
+const FenextExportCsvFile = ({ fileName, items, }) => {
+    function converterLine(obj) {
         return Object.values(obj)
             .map((e) => {
-                if (Array.isArray(e)) {
-                    return `${e.join("|")}`;
-                }
-                if (`${e}`.indexOf(",") > -1) {
-                    return `"${e}"`;
-                }
-                return `${e}`;
-            })
+            if (Array.isArray(e)) {
+                return `${e.join("|")}`;
+            }
+            if (`${e}`.indexOf(",") > -1) {
+                return `"${e}"`;
+            }
+            return `${e}`;
+        })
             .join(",");
     }
-
-    const converterCsv = (items: object[]) => {
+    const converterCsv = (items) => {
         const header = Object.keys(items[0]);
-
         const lines = items.map(converterLine).join("\r\n");
-
         return header + "\r\n" + lines;
     };
-
     const csv = converterCsv(items);
-
     const exportedFilenmae = `${fileName}.csv`;
-
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-
-    const n: any = navigator;
-
+    const n = navigator;
     if (n.msSaveBlob) {
         // IE 10+
         n.msSaveBlob(blob, exportedFilenmae);
-    } else {
+    }
+    else {
         const link = document.createElement("a");
         if (link.download !== undefined) {
             // feature detection
@@ -55,3 +43,5 @@ export const FenextExportCsvFile = ({
         }
     }
 };
+exports.FenextExportCsvFile = FenextExportCsvFile;
+//# sourceMappingURL=index.js.map
