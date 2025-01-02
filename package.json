@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/franciscoblancojn/fenextjs-functions#readme",
   "dependencies": {
-    "xlsx": "0.18.5"
+    
   },
   "files": [
     "cjs",

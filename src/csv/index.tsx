@@ -1,26 +1,32 @@
-function converterLine(obj: object) {
-    return Object.values(obj)
-        .map((e) => {
-            if (Array.isArray(e)) {
-                return `${e.join("|")}`;
-            }
-            if (`${e}`.indexOf(",") > -1) {
-                return `"${e}"`;
-            }
-            return `${e}`;
-        })
-        .join(",");
+
+
+export interface FenextExportCsvFileProps {
+    items: object[], fileName: string
 }
 
-const converterCsv = (items: object[]) => {
-    const header = Object.keys(items[0]);
+export const FenextExportCsvFile = ({ fileName, items }: FenextExportCsvFileProps) => {
+    function converterLine(obj: object) {
+        return Object.values(obj)
+            .map((e) => {
+                if (Array.isArray(e)) {
+                    return `${e.join("|")}`;
+                }
+                if (`${e}`.indexOf(",") > -1) {
+                    return `"${e}"`;
+                }
+                return `${e}`;
+            })
+            .join(",");
+    }
 
-    const lines = items.map(converterLine).join("\r\n");
+    const converterCsv = (items: object[]) => {
+        const header = Object.keys(items[0]);
 
-    return header + "\r\n" + lines;
-};
+        const lines = items.map(converterLine).join("\r\n");
 
-export const FenextExportCsvFile = (items: object[], fileName: string) => {
+        return header + "\r\n" + lines;
+    };
+
     const csv = converterCsv(items);
 
     const exportedFilenmae = `${fileName}.csv`;
